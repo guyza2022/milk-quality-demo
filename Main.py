@@ -21,7 +21,7 @@ from copy import deepcopy
 import pickle
 #import streamlit_authenticator as sta
 from pathlib import Path
-import membership as ms
+#import membership as ms
 import shutil
 from sklearn.feature_selection import r_regression
 from sklearn.metrics import mean_squared_error
@@ -216,12 +216,12 @@ if st.session_state['login'] != 'Yes' and st.session_state['register'] == 'No':
         username = st.text_input('',placeholder='Username')
         password = st.text_input('',placeholder='Password',type='password')
         login_buton = st.form_submit_button('Login')
-        if login_buton and len(username) !=0 and len(password) != 0:
-            succ = ms.login(username,password)
-            #st.write(succ)
-            if succ:
-                st.session_state['login'] = 'Yes'
-                st.experimental_rerun()
+        # if login_buton and len(username) !=0 and len(password) != 0:
+        #     succ = ms.login(username,password)
+        #     #st.write(succ)
+        #     if succ:
+        #         st.session_state['login'] = 'Yes'
+        #         st.experimental_rerun()
     st.text('Don\'t Have account? Sign up.')
     if st.button('Go to Register Page',on_click=register_callback):
         st.session_state['register'] = 'Yes'
@@ -234,8 +234,8 @@ elif st.session_state['login'] != 'Yes' and st.session_state['register'] == 'Yes
         username = st.text_input('',placeholder='Username')
         password = st.text_input('',placeholder='Password',type='password')
         register_button = st.form_submit_button('Register')
-        if register_button and len(fname) != 0 and len(lname) != 0 and len(username) != 0 and len(password) != 0:
-            ms.register(fname,lname,username,password)
+        # if register_button and len(fname) != 0 and len(lname) != 0 and len(username) != 0 and len(password) != 0:
+        #     ms.register(fname,lname,username,password)
     st.text('Already have an acoount? Log in.')
     if st.button('Go to Login Page',on_click=register_callback):
         st.session_state['register'] = 'No'
