@@ -107,9 +107,9 @@ def sav_tuning_1():
     with st.container():
         col1,col2= st.columns(2)
         with col1:
-            first_input_dev = st.selectbox(label='Derivative',options=[1,2,3,4],on_change=clear_cache)
+            first_input_dev = st.selectbox(label='Derivative',options=[x for x in range(1,36)],on_change=clear_cache)
         with col2:
-            first_input_ponm = st.selectbox(label='Polynomial Order',options=[1,2,3,4],key='p_first',on_change=clear_cache)
+            first_input_ponm = st.selectbox(label='Polynomial Order',options=[1,2],key='p_first',on_change=clear_cache)
         first_input_smp = st.slider(label='Smoothing Points',min_value=3,max_value=41,step=2,value=15,key='s_first',on_change=clear_cache)
     return first_input_dev,first_input_ponm,first_input_smp
 
@@ -118,9 +118,9 @@ def sav_tuning_2():
     with st.container():
         col1,col2 = st.columns(2)
         with col1:
-            second_input_dev = st.selectbox(label='Derivative',options=[1,2,3,4],index=1,on_change=clear_cache())
+            second_input_dev = st.selectbox(label='Derivative',options=[x for x in range(1,36)],index=1,on_change=clear_cache())
         with col2:
-            second_input_ponm = st.selectbox(label='Polynomial Order',options=[1,2,3,4],key='p_second',index=1,on_change=clear_cache())
+            second_input_ponm = st.selectbox(label='Polynomial Order',options=[1,2],key='p_second',index=1,on_change=clear_cache())
         second_input_smp = st.slider(label='Smoothing Points',min_value=3,max_value=41,step=2,value=21,key='s_second',on_change=clear_cache())
     return second_input_dev,second_input_ponm,second_input_smp
 
